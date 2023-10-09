@@ -24,7 +24,7 @@ func newTestConfig(t *testing.T) *VirtualMachineConfiguration {
 	if err != nil {
 		t.Fatal(err)
 	}
-	config, err := NewVirtualMachineConfiguration(bootloader, 1, 1024*1024*1024)
+	config, err := NewVirtualMachineConfiguration(bootloader, 1, 100*1024*1024)
 	if err != nil {
 		t.Fatal(err)
 	}
@@ -307,7 +307,7 @@ func setupIssue119Config(bootLoader *LinuxBootLoader) (*VirtualMachineConfigurat
 	config, err := NewVirtualMachineConfiguration(
 		bootLoader,
 		1,
-		512*1024*1024,
+		100*1024*1024,
 	)
 	if err != nil {
 		return nil, fmt.Errorf("failed to create a new virtual machine config: %w", err)
